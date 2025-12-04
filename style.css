@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "Clash Display";
+    src: url("Assets/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/TTF/ClashDisplay-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2, .build {
+    font-family: "Clash Display", sans-serif;
+}
+
+ul li{
+    list-style: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+    cursor: pointer;
+}
+
+ul li:hover{
+    border-bottom: 2px solid #958ebb;
+}
+
+.contact, .join, .build {
+    transition: all 0.3s ease;
+}
+
+.contact {
+    border: 2px solid rgba(255, 255, 255, 0.823);
+    cursor: pointer;
+}
+
+.contact:hover, .join:hover, .build:hover {
+    transform: scale(1.02);
+}
+
+.join, .build {
+    cursor: pointer;
+    background-image: linear-gradient(to right, #8077ad, #beb5e3);
+}
+
+.seta {
+    animation: arrowRight 2s infinite;
+}
+
+@keyframes arrowRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.contactInfo{
+    background: #ad5389;
+        background: linear-gradient(to right, #22202e, #383353, #22202e);
+}

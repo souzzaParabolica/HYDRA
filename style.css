@@ -49,7 +49,7 @@ ul li:hover {
 .join,
 .build, .iconBg, .numberOne, .numberTwo, .numberThree, .numberFour {
     cursor: pointer;
-    background-image: linear-gradient(to right, #8077ad, #beb5e3);
+    background-image: linear-gradient(to right, #777EAD, #beb5e3);
 }
 
 .seta {
@@ -82,7 +82,7 @@ ul li:hover {
 .banner{
     background-image: url(Assets/tech.jpg);
     background-size: cover;
-    background-position:0px -100px;
+    background-position:center;
     background-repeat: no-repeat;
 }
 
@@ -98,7 +98,6 @@ ul li:hover {
 
 .inputGroup input {
     font-size: 100%;
-    padding: 2em;
     outline: none;
     border: 4px solid rgba(200, 200, 200, 0.802);
     background-color: transparent;
@@ -109,9 +108,7 @@ ul li:hover {
 .inputGroup label {
     position: absolute;
     left: 0;
-    top: 16%;
     padding: 0.8em;
-    margin-left: 4em;
     pointer-events: none;
     transition: all 0.3s ease;
     color: #cac9d4;

@@ -7,6 +7,8 @@ const tl = gsap.timeline({
 });
 
 // HEADER
+const mm = gsap.matchMedia();
+
 tl.from("header", {
   y: -40,
   opacity: 0,
@@ -52,193 +54,394 @@ tl.from(
   "-=0.8"
 );
 
-gsap.from(".contactInfo", {
-  opacity: 0,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".contactInfo",
-    start: "top 80%",
-    markers: false,
-  },
-});
+mm.add("(min-width: 769px)", () => {
+  gsap.from(".contactInfo", {
+    opacity: 0,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".contactInfo",
+      start: "top 80%",
+      markers: false,
+    },
+  });
 
-gsap.from(".firstP", {
-  opacity: 0,
-  y: 10,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".firstP",
-    start: "top 80%",
-    end: "top 60%",
-    scrub: 1.2,
-    markers: false,
-  },
-});
+  gsap.from(".firstP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".firstP",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
 
-gsap.from(".secondP", {
-  opacity: 0,
-  y: 10,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".secondP",
-    start: "top 70%",
-    end: "top 50%",
-    scrub: 1.2,
-    markers: false,
-  },
-});
+  gsap.from(".secondP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".secondP",
+      start: "top 70%",
+      end: "top 50%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
 
-gsap.from(".thirdP", {
-  opacity: 0,
-  y: 10,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".thirdP",
-    start: "top 70%",
-    end: "top 50%",
-    scrub: 1.2,
-    markers: false,
-  },
-});
+  gsap.from(".thirdP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".thirdP",
+      start: "top 70%",
+      end: "top 50%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
 
-gsap.from(".cards .card", {
-  opacity: 0,
-  y: 30,
-  stagger: 0.5,
-  duration: 1,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".cards",
-    start: "top 40%",
-    markers: false,
-  },
-});
+  gsap.from(".cards .card", {
+    opacity: 0,
+    y: 30,
+    stagger: 0.5,
+    duration: 1,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".cards",
+      start: "top 40%",
+      markers: false,
+    },
+  });
 
-gsap.from(".usingHydra", {
-  opacity: 0,
-  y: 10,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".usingHydra",
-    start: "top 50%",
-    markers: false,
-  },
-});
+  gsap.from(".usingHydra", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".usingHydra",
+      start: "top 50%",
+      markers: false,
+    },
+  });
 
-gsap.from(".banner, .bannerTitle, .bannerSubtitle, .arrowDown", {
-  opacity: 0,
-  y: 30,
-  filter: "blur(10px)",
-  stagger: 0.3,
-  duration: 0.6,
-  scrollTrigger: {
-    trigger: ".usingHydra",
-    start: "top 50%",
-    markers: false,
-  },
-});
+  gsap.from(".banner, .bannerTitle, .bannerSubtitle, .arrowDown", {
+    opacity: 0,
+    y: 30,
+    filter: "blur(10px)",
+    stagger: 0.3,
+    duration: 0.6,
+    scrollTrigger: {
+      trigger: ".usingHydra",
+      start: "top 50%",
+      markers: false,
+    },
+  });
 
-gsap.from(".servicos img", {
-  opacity: 0,
-  stagger: 0.3,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".servicos",
-    start: "top 80%",
-    markers: false,
-  },
-});
+  gsap.from(".servicos img", {
+    opacity: 0,
+    stagger: 0.3,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".servicos",
+      start: "top 80%",
+      markers: false,
+    },
+  });
 
-gsap.from(".fourthP", {
-  opacity: 0,
-  y: 10,
-  filter: "blur(10px)",
-  scrollTrigger: {
-    trigger: ".fourthP",
-    start: "top 70%",
-    end: "top 50%",
-    scrub: 1.2,
-    markers: false,
-  },
-});
+  gsap.from(".fourthP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".fourthP",
+      start: "top 70%",
+      end: "top 50%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
 
-const tls = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".fourthP",
-    start: "top top", // quando o topo da seção encontrar o topo da viewport
-    end: "+=2500", // duração do "pin" em pixels rolados (ajuste conforme precisar)
-    scrub: 2, // animação suave
-    pin: true, // fixa a seção na tela
-    markers: false, // só pra debug, pode remover
-  },
-});
+  const tls = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".fourthP",
+      start: "top top", // quando o topo da seção encontrar o topo da viewport
+      end: "+=2500", // duração do "pin" em pixels rolados (ajuste conforme precisar)
+      scrub: 2, // animação suave
+      pin: true, // fixa a seção na tela
+      markers: false, // só pra debug, pode remover
+    },
+  });
 
-tls.from('.firstStep .circle', {
+  tls.from(".firstStep .circle", {
     y: 50,
     opacity: 0,
-    filter: 'blur(10px)',
+    filter: "blur(10px)",
     duration: 1,
-})
+  });
 
-tls.from(".numberOne", {
-  color: "#36334600",
-},'+=0.3');
+  tls.from(
+    ".numberOne",
+    {
+      color: "#36334600",
+    },
+    "+=0.3"
+  );
 
-tls.from(".firstStepP", {
-  y: 10,
-  opacity: 0,
-  filter: "blur(10px)",
-  duration: 1,
-},'+=0.3');
+  tls.from(
+    ".firstStepP",
+    {
+      y: 10,
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+    },
+    "+=0.3"
+  );
 
-tls.from(".secondStep .circle", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
+  tls.from(".secondStep .circle", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+  });
+
+  tls.from(
+    ".numberTwo",
+    {
+      color: "#36334600",
+    },
+    "+=0.3"
+  );
+
+  tls.from(
+    ".secondStepP",
+    {
+      y: 10,
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+    },
+    "+=0.3"
+  );
+
+  tls.from(".thirdStep .circle", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+  });
+
+  tls.from(
+    ".numberThree",
+    {
+      color: "#36334600",
+    },
+    "+=0.3"
+  );
+
+  tls.from(
+    ".thirdStepP",
+    {
+      y: 10,
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+    },
+    "+=0.3"
+  );
+
+  tls.from(".fourthStep .circle", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+  });
+
+  tls.from(
+    ".numberFour",
+    {
+      color: "#36334600",
+    },
+    "+=0.3"
+  );
+
+  tls.from(
+    ".fourthStepP",
+    {
+      y: 10,
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+    },
+    "+=0.3"
+  );
 });
 
-tls.from(".numberTwo", {
-  color: "#36334600",
-}, '+=0.3');
+mm.add("(max-width: 768px)", () => {
+  gsap.from(".contactInfo", {
+    opacity: 0,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".contactInfo",
+      start: "top 50%",
+      markers: false,
+    },
+  });
 
-tls.from(".secondStepP", {
-  y: 10,
-  opacity: 0,
-  filter: "blur(10px)",
-  duration: 1,
-}, '+=0.3');
+  gsap.from(".firstP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".firstP",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
 
-tls.from(".thirdStep .circle", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
+  gsap.from(".secondP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".secondP",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
+
+  gsap.from(".thirdP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".thirdP",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
+
+  gsap.utils.toArray(".cards .card").forEach((card) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      filter: "blur(6px)",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  gsap.from(".usingHydra", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".usingHydra",
+      start: "top 50%",
+      markers: false,
+    },
+  });
+
+  gsap.from(".banner, .bannerTitle, .bannerSubtitle, .arrowDown", {
+    opacity: 0,
+    y: 30,
+    filter: "blur(10px)",
+    stagger: 0.3,
+    duration: 0.6,
+    scrollTrigger: {
+      trigger: ".usingHydra",
+      start: "top 40%",
+      markers: false,
+    },
+  });
+
+  gsap.utils.toArray(".servicos img").forEach((img) => {
+    gsap.from(img, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: img,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  gsap.from(".fourthP", {
+    opacity: 0,
+    y: 10,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".fourthP",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
+
+  gsap.from(".firstStep",{
+      y: 10,
+      opacity: 0,
+      filter: "blur(10px)",
+      scrollTrigger: {
+          trigger: '.firstStep',
+          start: 'top 60%',
+          end: 'top 40%',
+          scrub: 1.2,
+          markers: false,
+      }
+    },
+    );
+    
+     gsap.from(".secondStep", {
+       y: 10,
+       opacity: 0,
+       filter: "blur(10px)",
+       scrollTrigger: {
+         trigger: ".secondStep",
+         start: "top 60%",
+         end: "top 40%",
+         scrub: 1.2,
+         markers: false,
+       },
+     });
+    
+     gsap.from(".thirdStep", {
+       y: 10,
+       opacity: 0,
+       filter: "blur(10px)",
+       scrollTrigger: {
+         trigger: ".thirdStep",
+         start: "top 60%",
+         end: "top 40%",
+         scrub: 1.2,
+         markers: false,
+       },
+     });
+    
+     gsap.from(".fourthStep", {
+       y: 10,
+       opacity: 0,
+       filter: "blur(10px)",
+       scrollTrigger: {
+         trigger: ".fourthStep",
+         start: "top 60%",
+         end: "top 40%",
+         scrub: 1.2,
+         markers: false,
+       },
+     });
 });
-
-tls.from(".numberThree", {
-  color: "#36334600",
-}, '+=0.3');
-
-tls.from(".thirdStepP", {
-  y: 10,
-  opacity: 0,
-  filter: "blur(10px)",
-  duration: 1,
-}, '+=0.3');
-
-tls.from(".fourthStep .circle", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
-});
-
-tls.from(".numberFour", {
-  color: "#36334600",
-}, '+=0.3');
-
-tls.from(".fourthStepP", {
-  y: 10,
-  opacity: 0,
-  filter: "blur(10px)",
-  duration: 1,
-}, '+=0.3');
-

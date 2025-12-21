@@ -176,6 +176,12 @@ mm.add("(min-width: 769px)", () => {
     },
   });
 
+  tls.to(".test", {
+    opacity: 0,
+    filter: "blur(10px)",
+    duration:1,
+  });
+
   tls.from(".firstStep .circle", {
     y: 50,
     opacity: 0,
@@ -392,56 +398,55 @@ mm.add("(max-width: 768px)", () => {
     },
   });
 
-  gsap.from(".firstStep",{
-      y: 10,
-      opacity: 0,
-      filter: "blur(10px)",
-      scrollTrigger: {
-          trigger: '.firstStep',
-          start: 'top 60%',
-          end: 'top 40%',
-          scrub: 1.2,
-          markers: false,
-      }
+  gsap.from(".firstStep", {
+    y: 10,
+    opacity: 0,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".firstStep",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
     },
-    );
-    
-     gsap.from(".secondStep", {
-       y: 10,
-       opacity: 0,
-       filter: "blur(10px)",
-       scrollTrigger: {
-         trigger: ".secondStep",
-         start: "top 60%",
-         end: "top 40%",
-         scrub: 1.2,
-         markers: false,
-       },
-     });
-    
-     gsap.from(".thirdStep", {
-       y: 10,
-       opacity: 0,
-       filter: "blur(10px)",
-       scrollTrigger: {
-         trigger: ".thirdStep",
-         start: "top 60%",
-         end: "top 40%",
-         scrub: 1.2,
-         markers: false,
-       },
-     });
-    
-     gsap.from(".fourthStep", {
-       y: 10,
-       opacity: 0,
-       filter: "blur(10px)",
-       scrollTrigger: {
-         trigger: ".fourthStep",
-         start: "top 60%",
-         end: "top 40%",
-         scrub: 1.2,
-         markers: false,
-       },
-     });
+  });
+
+  gsap.from(".secondStep", {
+    y: 10,
+    opacity: 0,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".secondStep",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
+
+  gsap.from(".thirdStep", {
+    y: 10,
+    opacity: 0,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".thirdStep",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
+
+  gsap.from(".fourthStep", {
+    y: 10,
+    opacity: 0,
+    filter: "blur(10px)",
+    scrollTrigger: {
+      trigger: ".fourthStep",
+      start: "top 60%",
+      end: "top 40%",
+      scrub: 1.2,
+      markers: false,
+    },
+  });
 });
